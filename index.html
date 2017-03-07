@@ -8,16 +8,21 @@
 			function myFunction( params ) {
 				try {
 					if ( params === 0 ) {
-						throw 'cannot be zero';
+						throw 1;
 					} else {
 						console.log( 'all good' );
 					}
 				}
 				catch( err ) {
-					console.log( err );
+					if ( err === 1 ) {
+						console.log( 'Error cause by Zero input' );
+					}
+				}
+				finally {
+					console.log( 'I dont care about the result!!!' );
 				}
 			}
-			myFunction( 2 );
+			myFunction( 0 );
 		} );
 	</script>
 </head>
